@@ -1,1 +1,16 @@
-this is test commit...2
+# Gravity Calculator v0.1
+# m.emin sanlier 17.10.2017
+# input order fallingTime, initialPosition, initialVelocity
+0   read r3		# read fallingTime
+1   read r1		# read initialPosition
+2   read r2		# read initialVelocity
+3   mul r4, r3, r3      # r4 is square of fallingtime
+4   setn r5, -10        # r5 is gravity constant
+5   mul r6, r5, r4      # r6 is multiply of gravity and square of fallingtime  
+6   setn r7, 2          # r7 is 2 
+7   div r8, r6, r7	# r8 is the result of first step
+8   mul r9, r2, r3      # r9 is multiply of initialVelocity and fallingtime
+9   add r10, r8, r9     # r10 is total change in position
+10  add r11, r10, r1    # r11 is the new position!
+11  write r11	        # print the result
+12  halt
